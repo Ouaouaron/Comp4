@@ -9,8 +9,24 @@ function Game(){
             }
         }
     }
-    console.log("New number chosen.");
+    stdout.write("New number chosen.");
     this.history = [];
+}
+Game.prototype.turn = function(guess) {
+    var current;
+    try {
+        current = new Attempt(guess);
+    } catch (e) {
+        stdout.write("Please enter five digits.");
+        continue;
+    }
+    current.response = this.processAttempt(current);
+    stdout.write(current.response[0] + "-" + current.reponse[1]);
+    self.history[self.history.length] = current;
+    attemptHistory.logAttempt(current);
+    if (current.response.toString() == [5, 5].toString()) {
+        console.log("You win!");
+    }
 }
 Game.prototype.play = function() {
     while(true) {
@@ -19,12 +35,13 @@ Game.prototype.play = function() {
         try {
             current = new Attempt(guess);
         } catch (e) {
-            console.log("Please enter five digits.");
+            stdout.write("Please enter five digits.");
             continue;
         }
         current.response = this.processAttempt(current);
-        console.log(current.response[0] + "-" + current.reponse[1]);
+        stdout.write(current.response[0] + "-" + current.reponse[1]);
         self.history[self.history.length] = current;
+        attemptHistory.logAttempt(current);
         if (current.response.toString() == [5, 5].toString()) {
             console.log("You win!");
             break;
