@@ -1,7 +1,7 @@
 stdout = {
     element: document.getElementById('stdout'),
     write: function(message) {
-        stdout.element.innerHTML += message + "<br>\n";
+        stdout.element.innerHTML = message + "<br>\n" + stdout.element.innerHTML;
     },
     clear: function() {
         stdout.element.innerHTML = "";
@@ -10,7 +10,7 @@ stdout = {
 
 attemptHistory = {
     element: document.getElementById('history'),
-    logattempt: function(attempt) {
+    logAttempt: function(attempt) {
         var msg = "";
         for (var i=0; i<attempt.inputs.length; i++) {
             msg += attempt.inputs[i] + " ";
@@ -39,10 +39,8 @@ var newGame = function () {
         }
     }
     
-    stdout.write("Game Start!");
-    var temp = new Attempt("12345");
-    temp.response = [0, 0];
-    attemptHistory.logattempt(temp);
+    game = new Game();
+    game.play();
 };
 
 document.getElementById('newButton').onclick = function(){newGame();};
