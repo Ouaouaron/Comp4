@@ -20,10 +20,8 @@ Game.prototype.turn = function(guess) {
         stdout.write("Please enter five digits.");
         return;
     }
-    stdout.write(this.processAttempt(current));
-        
     current.response = this.processAttempt(current);
-    stdout.write(current.response[0] + "-" + current.reponse[1]);
+    stdout.write(current.response[0] + "-" + current.response[1]);
     self.history[self.history.length] = current;
     attemptHistory.logAttempt(current);
     if (current.response.toString() == [5, 5].toString()) {
@@ -60,7 +58,6 @@ Game.prototype.processAttempt = function(attempt) {
             }
         }
     }
-    stdout.write("before return: " + response);
     return response;
 };
 
