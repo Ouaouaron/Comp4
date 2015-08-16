@@ -1,7 +1,24 @@
-var stdout = document.getElementById('stdout');
-var history = document.getElementById('history');
+stdout = {
+    element: document.getElementById('stdout');
+    write: function(message) {
+        stdout.element.innerHTML += message + "<br>\n";
+    }
+    clear: function() {
+        stdout.element.innerHTML = "";
+    }
+}
 
-newGame = function () {
+history = {
+    element: document.getElementById('history');
+    logAttempt: function(attempt) {
+        history.element.innerHTML += attempt.toString() + "<br>\n";
+    }
+    clear: function() {
+        history.element.innerHTML = "";
+    }
+}
+
+var newGame = function () {
     if (document.getElementsByTagName('input')[0].disabled === true) {
         var coll = document.getElementsByTagName('input');
         for (var i=0; i<coll.length; i++) {
