@@ -1,0 +1,54 @@
+body {
+    background-color: #004;
+    overflow: hidden;
+}
+hr.clearBoth {
+    clear: both;
+    visibility: hidden;
+}
+#input {
+    font-family:"Verdana", "Sans-serif";
+    font-size: 3em;
+    width: 7.25em;
+    letter-spacing: 0.8em;
+    padding-left: 0.5em;
+    border-radius: 0.2em;
+    /*
+    letter-spacing: 1ch;
+    width: 10ch;
+    */
+}
+#buttonDiv {
+    margin: 0 2.8em;
+    display: inline-block;
+}
+.button, button {
+    font-size: 2em;
+    margin: 0.25em 0.5em;
+}
+#newButton {
+    font-size: 1.5em;
+    margin: 0.5em 4.75em;
+}
+#outputDiv {
+    width: 100%;
+}
+.output {
+    background-color: #110808;
+    color: #ddd;
+    font-family: monospace;
+    font-size: 1.5em;
+    width: 98%;
+    padding: 0.2em;
+    margin: 0.1em;
+}
+
+#stdout {
+    overflow-y: scroll;
+    height: 5em;
+}
+
+#history {
+    min-height: 5em;
+}
+}
