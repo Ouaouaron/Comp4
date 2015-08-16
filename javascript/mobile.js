@@ -10,7 +10,7 @@ stdout = {
 
 history = {
     element: document.getElementById('history'),
-    logAttempt: function(attempt) {
+    logattempt: function(attempt) {
         history.element.innerHTML += attempt.toString() + "<br>\n";
     },
     clear: function() {
@@ -37,12 +37,12 @@ var newGame = function () {
     stdout.write("Game Start!");
     var temp = new Attempt("12345");
     temp.response = [0, 0];
-    history.logAttempt(temp);
+    history.logattempt(temp);
 };
 
 document.getElementById('newButton').onclick = function(){newGame();};
 document.getElementById('input').onkeypress = function(){
-    alert(event.key);
+    alert(event.charCode);
     //var num = event.charCode;
     //return (num >= 48 && num <= 57) || (num >= 96 && num <= 105) || num == 8 || num == 13;
 }
