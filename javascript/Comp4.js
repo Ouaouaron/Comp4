@@ -27,8 +27,6 @@ Game.prototype.turn = function(guess) {
     if (current.response.toString() == [5, 5].toString()) {
         stdout.write("You win!");
     }
-    
-    document.getElementById('input').value="";
 }
 Game.prototype.play = function() {
     while(true) {
