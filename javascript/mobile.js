@@ -40,7 +40,6 @@ var newGame = function () {
     }
     
     game = new Game();
-    game.play();
 };
 
 document.getElementById('newButton').onclick = function(){newGame();};
