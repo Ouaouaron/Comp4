@@ -42,7 +42,7 @@ var newGame = function () {
     game = new Game();
 };
 
-document.getElementById('newButton').onclick = function(){newGame();};
+document.getElementById('newButton').onclick = function(){newGame(); document.getElementById('input').select()};
 document.getElementById('input').onkeypress = function(){
     var num = event.charCode;
     return (num >= 48 && num <= 57) || num == 8 || num == 13;
