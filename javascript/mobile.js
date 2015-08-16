@@ -11,7 +11,12 @@ stdout = {
 attemptHistory = {
     element: document.getElementById('history'),
     logattempt: function(attempt) {
-        attemptHistory.element.innerHTML += attempt.toString() + "<br>\n";
+        var msg = "";
+        for (var i=0; i<attempt.inputs.length; i++) {
+            msg += attempt.inputs[i] + " ";
+        }
+        msg += "&nbsp;&nbsp;&nbsp;" + attempt.response[0] + "-" attempt.response[1];
+        attemptHistory.element.innerHTML += msg + "<br>\n";
     },
     clear: function() {
         attemptHistory.element.innerHTML = "";
