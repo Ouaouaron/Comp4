@@ -8,6 +8,7 @@ hr.clearBoth {
 }
 #wrapper {
     max-width: 390px;
+    margin: auto;
 }
 #input {
     font-family:"Verdana", "Sans-serif";
