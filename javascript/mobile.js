@@ -1,7 +1,10 @@
 stdout = {
     element: document.getElementById('stdout'),
+    //write: function(message) {
+    //    stdout.element.innerHTML += message + "<br>\n";
+    //},
     write: function(message) {
-        stdout.element.innerHTML = message + "<br>\n" + stdout.element.innerHTML;
+        stdout.element.innerHTML = message + "<br>\n"
     },
     clear: function() {
         stdout.element.innerHTML = "";
