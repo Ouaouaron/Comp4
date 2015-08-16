@@ -58,10 +58,10 @@ hr.clearBoth {
 */
 #stdout {
     height: 2em;
-    vertical-align: center;
+    vertical-align: middle;
 }
 
 #history {
     min-height: 10em;
 }
-}
+
