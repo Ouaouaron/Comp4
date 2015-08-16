@@ -22,7 +22,7 @@ Game.prototype.turn = function(guess) {
         stdout.write("Please enter five digits.");
         return;
     }
-    stdout.write(current.toString);
+    stdout.write(current.toString());
     
     current.response = this.processAttempt(current);
     stdout.write(current.response[0] + "-" + current.reponse[1]);
