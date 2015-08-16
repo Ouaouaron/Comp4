@@ -54,12 +54,10 @@ Game.prototype.play = function() {
 };
 Game.prototype.processAttempt = function(attempt) {
     var response = [0, 0];
-    var current;
     for (var i=0; i<5; i++) {
-        current = attempt.inputs[i];
-        if (this.solution.indexOf(current) != -1) {
+        if (this.solution.indexOf(attempt.inputs[i]) != -1) {
             response[0]++;
-            if (this.solution.indexOf(current) == i) {
+            if (this.solution.indexOf(attempt.inputs[i]) == i) {
                 response[1]++;
             }
         }
