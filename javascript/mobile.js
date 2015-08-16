@@ -15,7 +15,7 @@ attemptHistory = {
         for (var i=0; i<attempt.inputs.length; i++) {
             msg += attempt.inputs[i] + " ";
         }
-        msg += "&nbsp;&nbsp;&nbsp;" + attempt.response[0] + "-" attempt.response[1];
+        msg += "&nbsp;&nbsp;&nbsp;" + attempt.response[0] + "-" + attempt.response[1];
         attemptHistory.element.innerHTML += msg + "<br>\n";
     },
     clear: function() {
