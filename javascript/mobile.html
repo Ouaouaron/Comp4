@@ -1,1 +1,21 @@
-
+<!DOCTYPE html>
+<html>
+<head> 
+  <title>Comp4 - JS (mobile)</title>
+</head>
+<body>
+  <div id='wrapper'>
+    <form onsubmit='return false'>
+      <input type='tel' maxlength='5' autocomplete='off' id='input' onclick='this.select()' disabled  onkeypress='return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 8 || event.charCode == 13 || (event.charCode >= 96 && event.charCode <= 105)' />
+      <br />
+      <div id='buttonDiv'>
+        <button type='reset' onclick='document.getElementById("input").focus()' disabled >Clear</button>
+        <input type='submit' class='button' onclick='alert(document.getElementById("input").value)' disabled />
+      </div> <!--#buttonDiv-->
+    </form>
+    <p id='stdout' class='output'></p>
+    <button type='button' autofocus='true' id='newButton'>New Game</button>
+    <p id='history' class='output'></p>
+  </div> <!--#wrapper-->
+</body>
+</html>
