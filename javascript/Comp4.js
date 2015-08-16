@@ -18,14 +18,14 @@ Game.prototype.turn = function(guess) {
         current = new Attempt(guess);
     } catch (e) {
         stdout.write("Please enter five digits.");
-        continue;
+        return;
     }
     current.response = this.processAttempt(current);
     stdout.write(current.response[0] + "-" + current.reponse[1]);
     self.history[self.history.length] = current;
     attemptHistory.logAttempt(current);
     if (current.response.toString() == [5, 5].toString()) {
-        console.log("You win!");
+        stdout.write("You win!");
     }
 }
 Game.prototype.play = function() {
@@ -43,7 +43,7 @@ Game.prototype.play = function() {
         self.history[self.history.length] = current;
         attemptHistory.logAttempt(current);
         if (current.response.toString() == [5, 5].toString()) {
-            console.log("You win!");
+            stdout.write("You win!");
             break;
         }
     }
