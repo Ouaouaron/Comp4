@@ -1,3 +1,7 @@
+alert("mobile.js running");
+document.getElementById('stdout').innerHTML += "Test";
+alert("done adding");
+
 var stdout = document.getElementById('stdout');
 var history = document.getElementById('history');
 
