@@ -37,7 +37,7 @@ var newGame = function () {
     stdout.write("Game Start!");
     var temp = new Attempt("12345");
     temp.response = [0, 0];
-    history.element.innerHTML += attempt.toString() + "<br>\n";
+    document.getElementById('history').innerHTML += attempt.toString() + "<br>\n";
     history.logattempt(temp);
 };
 
