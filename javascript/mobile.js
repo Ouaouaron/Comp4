@@ -8,13 +8,13 @@ stdout = {
     }
 };
 
-historytest = {
+attemptHistory = {
     element: document.getElementById('history'),
     logattempt: function(attempt) {
-        historytest.element.innerHTML += attempt.toString() + "<br>\n";
+        attemptHistory.element.innerHTML += attempt.toString() + "<br>\n";
     },
     clear: function() {
-        historytest.element.innerHTML = "";
+        attemptHistory.element.innerHTML = "";
     }
 };
 
@@ -37,8 +37,7 @@ var newGame = function () {
     stdout.write("Game Start!");
     var temp = new Attempt("12345");
     temp.response = [0, 0];
-    document.getElementById('history').innerHTML += attempt.toString() + "<br>\n";
-    history.logattempt(temp);
+    attemptHistory.logattempt(temp);
 };
 
 document.getElementById('newButton').onclick = function(){newGame();};
