@@ -6,6 +6,9 @@ hr.clearBoth {
     clear: both;
     visibility: hidden;
 }
+#wrapper {
+    max-width: 390px;
+}
 #input {
     font-family:"Verdana", "Sans-serif";
     font-size: 3em;
