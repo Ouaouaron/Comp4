@@ -64,6 +64,7 @@ Game.prototype.processAttempt = function(attempt) {
             }
         }
     }
+    stdout.write(response);
     return response;
 };
 
