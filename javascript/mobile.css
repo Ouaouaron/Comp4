@@ -46,7 +46,7 @@ hr.clearBoth {
     padding: 0.2em;
     margin: 0.1em;
 }
-
+/*
 #stdout {
     overflow-y: scroll;
     height: 5em;
@@ -54,4 +54,14 @@ hr.clearBoth {
 
 #history {
     min-height: 5em;
+}
+*/
+#stdout {
+    height: 2em;
+    vertical-align: center;
+}
+
+#history {
+    min-height: 10em;
+}
 }
