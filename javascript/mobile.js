@@ -8,13 +8,13 @@ stdout = {
     }
 };
 
-history = {
+historytest = {
     element: document.getElementById('history'),
     logattempt: function(attempt) {
-        history.element.innerHTML += attempt.toString() + "<br>\n";
+        historytest.element.innerHTML += attempt.toString() + "<br>\n";
     },
     clear: function() {
-        history.element.innerHTML = "";
+        historytest.element.innerHTML = "";
     }
 };
 
