@@ -34,13 +34,15 @@ var newGame = function () {
         }
     }
     
-    stdout.innerHTML += "Game Start!<br />";
-    history.innerHTML += "1 1 1 1 1   2-6 <br />";
-    stdout.innerHTML += "Game continue, or somethingn!<br />";
+    stdout.write("Game Start!");
+    var temp = new Attempt("12345");
+    temp.response = [0, 0];
+    history.logAttempt(temp);
 };
 
 document.getElementById('newButton').onclick = function(){newGame();};
 document.getElementById('input').onkeypress = function(){
-    var num = event.charCode;
-    return (num >= 48 && num <= 57) || (num >= 96 && num <= 105) || num == 8 || num == 13;
+    alert(event.key);
+    //var num = event.charCode;
+    //return (num >= 48 && num <= 57) || (num >= 96 && num <= 105) || num == 8 || num == 13;
 }
