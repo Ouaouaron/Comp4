@@ -13,8 +13,6 @@ function Game(){
     this.history = [];
 }
 Game.prototype.turn = function(guess) {
-    stdout.write(guess);
-    
     var current;
     try {
         current = new Attempt(guess);
@@ -22,8 +20,6 @@ Game.prototype.turn = function(guess) {
         stdout.write("Please enter five digits.");
         return;
     }
-    stdout.write(current.inputs);
-    
     current.response = this.processAttempt(current);
     stdout.write(current.response[0] + "-" + current.reponse[1]);
     self.history[self.history.length] = current;
@@ -42,6 +38,8 @@ Game.prototype.play = function() {
             stdout.write("Please enter five digits.");
             continue;
         }
+        stdout.write(this.processAttempt(current));
+        
         current.response = this.processAttempt(current);
         stdout.write(current.response[0] + "-" + current.reponse[1]);
         self.history[self.history.length] = current;
@@ -54,8 +52,6 @@ Game.prototype.play = function() {
 };
 Game.prototype.processAttempt = function(attempt) {
     var response = [0, 0];
-    stdout.write(attempt.inputs);
-    
     for (var i=0; i<5; i++) {
         if (this.solution.indexOf(attempt.inputs[i]) != -1) {
             response[0]++;
@@ -64,7 +60,7 @@ Game.prototype.processAttempt = function(attempt) {
             }
         }
     }
-    stdout.write(response);
+    stdout.write("before return: " + response);
     return response;
 };
 
